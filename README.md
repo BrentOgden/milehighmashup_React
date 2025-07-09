@@ -27,11 +27,9 @@ Live site: https://milehighmashup.com
 
 ## Features
 
-- **Real-Time Scores & Standings** — Pulls live game data for Denver teams via ESPN & MySportsFeeds APIs.  
-- **Team Pages** — Dedicated sections for Broncos, Nuggets, Avalanche, Mammoth with rosters and schedules.  
+- **Real-Time Scores & News** — Pulls live game scores, news, and videos for Denver teams via ESPN APIs.   
 - **News Aggregator** — Latest articles and headlines curated for Denver sports fans.  
-- **Highlight Carousel** — Animated video highlights and image galleries.  
-- **Filtering & Sorting** — Filter stats by team, season, or player.  
+- **Highlight Carousel** — Animated video highlights and image galleries.   
 - **Responsive Design** — Mobile-first layout optimized for all screen sizes.  
 - **SEO Optimized** — Metadata and structured data for better search visibility.  
 
