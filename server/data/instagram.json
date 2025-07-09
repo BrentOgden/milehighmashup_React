@@ -1,0 +1,18 @@
+{
+  "broncos": [
+    { "link": "https://www.instagram.com/p/C1BroncosExample/" },
+    { "link": "https://www.instagram.com/p/C2BroncosExample/" }
+  ],
+  "avalanche": [
+    { "link": "https://www.instagram.com/p/C1AvsExample/" },
+    { "link": "https://www.instagram.com/p/C2AvsExample/" }
+  ],
+  "nuggets": [
+    { "link": "https://www.instagram.com/p/C1NuggetsExample/" },
+    { "link": "https://www.instagram.com/p/C2NuggetsExample/" }
+  ],
+  "mammothlax": [
+    { "link": "https://www.instagram.com/p/C1MammothExample/" },
+    { "link": "https://www.instagram.com/p/C2MammothExample/" }
+  ]
+}

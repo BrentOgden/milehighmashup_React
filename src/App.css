@@ -1,0 +1,516 @@
+
+
+#root {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  color: #ffffff;
+  z-index: 5;
+}
+html, body, #root {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  
+}
+* {
+  box-sizing: border-box !important;
+}
+
+body {
+  background-image: url('./assets/hero.jpg');
+  background-size: cover;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  /* Cover the entire page */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-attachment: fixed;
+  /* Fixed background */
+  background-position: center;
+  /* Center the background image */
+  color: #ffffff;
+  
+}
+
+#video-block h2 {
+  font-size: 2rem;
+  margin-top: 4rem;
+  margin-bottom: -4rem;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  box-sizing: content-box !important;
+  background-size: cover;
+  /* Adjust color and opacity as needed */
+  /* z-index: 1; */
+}
+
+
+
+.header-block {
+  text-align: left;
+  margin: 5rem 0;
+}
+
+.hero {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+
+}
+
+.logo-home {
+  height: 7em;
+  will-change: filter;
+  transition: filter 300ms;
+
+}
+.video-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-item {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-title img {
+  height: 75px;
+  padding: 0 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.section-title img:hover {
+  filter: drop-shadow(0 0 1em #db9603);
+  transform: scale(1.1);
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1em #db9603);
+  transform: scale(1.4);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 1em #db9603);
+  transform: scale(1.4);
+}
+
+.card--badge {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  font-size: 12px;
+  background-color: #8e2034;
+  color: white;
+  padding: 5px 7px;
+  border-radius: 6px;
+  font-weight: bold;
+  border-color: #1a1a1a;
+}
+
+.black-text {
+  color: #213547;
+}
+
+.card--badge--2 {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 12px;
+  background-color: #111;
+  color: white;
+  padding: 5px 7px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  flex-direction: row;
+}
+
+.card-text p {
+  color: #213547;
+  text-align: center;
+  margin: 0;
+}
+
+.card-text h4 {
+  color: #8e2034;
+}
+
+.card-standings {
+  width: 100%;
+  font-size: 16px;
+  display: inline-grid;
+  justify-content: space-evenly;
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+  color: #213547;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding: 20px 40px 0 20px;
+  margin-bottom: 20px;
+}
+
+#standings {
+  margin-top: 2rem;
+  height: 350px;
+}
+
+.record-text p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -15px;
+  font-weight: bold;
+
+
+}
+
+.results-block {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #0000003d;
+  border-radius: 5px;
+}
+
+.results-block p{
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.date-block h3{
+  color: #0E2240;
+}
+.card {
+  box-shadow: 0px 0px 10px 0px #888888;
+}
+
+.header-style-denver-broncos h2 {
+  padding: 10px 0;
+  font-size: 1.8rem;
+}
+
+.header-style-colorado-avalanche h2 {
+  padding: 10px 0;
+  font-size: 1.8rem;
+}
+
+.header-style-colorado-mammoth h2 {
+  padding: 10px 0;
+  font-size: 1.8rem;
+}
+
+.header-style-denver-nuggets h2 {
+  padding: 10px 0;
+  font-size: 1.8rem;
+}
+
+.card--image {
+  padding: 10px;
+  width: auto;
+}
+
+.card--stats {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.card--star {
+  height: 14px;
+}
+
+.card--title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-style-home-denver-broncos {
+  background-color: #FB4F14;
+  background-image: url('./assets/broncos_background.jpg');
+  background-size: cover;
+  /* Cover the entire space */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Prevent image repeating */
+  color: #fff;
+  height: -webkit-fill-available;
+}
+
+.header-style-home-denver-nuggets {
+  background-color: #0E2240;
+  background-image: url('./assets/nuggets_background.jpg');
+  background-size: cover;
+  /* Cover the entire space */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Prevent image repeating */
+  color: #fff;
+  height: -webkit-fill-available;
+}
+
+.header-style-home-colorado-avalanche {
+  background-color: #6F263D;
+  background-image: url('./assets/avs_background.jpg');
+  background-size: cover;
+  /* Cover the entire space */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Prevent image repeating */
+  color: #fff;
+  height: -webkit-fill-available;
+  /* margin: -20px -40px 40px -20px; */
+}
+
+.header-style-colorado-mammoth {
+  background-color: #98002E;
+  color: #fff;
+  margin: -20px -40px 40px -20px;
+}
+
+.header-style-denver-broncos {
+  background-color: #FB4F14;
+  color: #fff;
+  margin: -20px -40px 40px -20px;
+}
+
+.header-style-colorado-avalanche {
+  background-color: #6F263D;
+  color: #fff;
+  margin: -20px -40px 40px -20px;
+}
+
+.header-style-denver-nuggets {
+  background-color: #0E2240;
+  color: #fff;
+  margin: -20px -40px 40px -20px;
+}
+
+.section-title {
+  margin: 20px;
+  background-color: #fb4f1447;
+  padding: 5px 0;
+}
+
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+  margin-bottom: 9px;
+}
+
+.title-text {
+  font-size: 2.2rem;
+}
+
+.title-text-white {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.container {
+  margin-top: 5rem;
+
+}
+
+
+
+
+
+body {
+  /* margin: 0; */
+  display: flex;
+  place-items: center;
+  /* min-width: 320px;
+  min-height: 100vh; */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+
+
+
+.logo-header {
+  height: 100px;
+}
+
+.brand {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+.hamburger {
+  display: none;
+  /* Hide by default */
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.navItem {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  display: none;
+  /* Controlled by React state */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdownItem {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navMenu {
+    display: none;
+  }
+
+  .navMenu.show {
+    display: flex;
+    /* Change to flex for consistency */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@media (max-width: 768px) {
+
+  /* Adjust the breakpoint as needed */
+  .cards-list {
+    display: block !important;
+    /* Stack cards on top of each other */
+  }
+}
