@@ -74,7 +74,7 @@ export default function Facts() {
             ],
             bullets: [
                 '6 Hall-of-Famers — Ray Bourque, Joe Sakic, Patrick Roy, Peter Forsberg, etc.',
-                'Won 3 Cups (including their first season in Colorado) - (3–0 in Finals)',
+                'Won 3 Stanley Cups (including their first season in Colorado) - (3–0 in Finals)',
             ],
         },
         {
