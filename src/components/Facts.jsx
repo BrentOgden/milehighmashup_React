@@ -9,7 +9,7 @@ import { FaStar } from 'react-icons/fa';
 import broncosLogo from '../assets/broncos.png';
 import avsLogo from '../assets/avs.png';
 import mammothLogo from '../assets/mammoth.png';
-import nuggetsLogo from '../assets/nuggets.png';
+import nuggetsLogo from '../assets/Nuggets.png';
 
 import broncosBg from '../assets/broncosbackground2.jpg';
 import avsBg from '../assets/avsbackground.jpg';
