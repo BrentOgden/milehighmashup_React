@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import arrowUp from '../assets/arrowUp.png';
+import arrowUp from '../assets/arrowup.png';
 import '../scrollToTopArrow.css'; // Import the CSS file for styling
 
 const ScrollToTopArrow = () => {
