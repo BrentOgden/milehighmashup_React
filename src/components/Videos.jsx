@@ -6,8 +6,8 @@ import '../App.css';
 function VideoComponent({ videoId }) {
     // You can also set player options
     const opts = {
-        height: '400',
-        width: 'auto',
+        height: '250',
+        width: '300',
         playerVars: {
             autoplay: 0, // Disable autoplay
             controls: 1, // Show controls

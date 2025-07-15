@@ -1,12 +1,12 @@
 .scroll-to-top-arrow {
   position: fixed;
-  bottom: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
+  bottom: 20px; 
+  right: 20px; 
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Optional: for a shadow effect */
-  z-index: 1000; /* To ensure it stays above other content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+  z-index: 1000; 
   animation: bounce 15s infinite;
   animation-timing-function: ease-in-out;
   opacity: 0;
