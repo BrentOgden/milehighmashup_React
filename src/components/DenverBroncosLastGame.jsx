@@ -4,7 +4,7 @@ import espn  from '../api/espnApi';
 import axios from 'axios';
 
 const TEAM_ID    = 7;    // Denver Broncos
-const SEASON     = 2024;
+const SEASON     = 2025;
 const SEASONTYPE = 2;    // regular season
 
 const RECORD_URL = `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl
