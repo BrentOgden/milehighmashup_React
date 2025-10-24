@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const TEAM_ID    = 7;   // Denver Nuggets’ ESPN team ID
 const SEASON     = 2026;
-const SEASONTYPE = 1;   // regular season
+const SEASONTYPE = 2;   // regular season
 
 const RECORD_URL = `https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba
   /seasons/${SEASON}/types/${SEASONTYPE}/teams/${TEAM_ID}/record`
