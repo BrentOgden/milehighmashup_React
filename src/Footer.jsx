@@ -54,7 +54,10 @@ export default function Footer() {
             {/* Bottom bar */}
             <div className="w-full bg-black/60">
                 <div className="max-w-screen-xl mx-auto px-6 py-4 text-center text-sm">
-                    © {new Date().getFullYear()} Brent Ogden. All rights reserved.
+                    © {new Date().getFullYear()} Mile High Mashup. All rights reserved.
+                </div>
+                <div className='pb-10 text-sm'>
+                    Designed and built by <a className="hover:text-amber-400" href='https://bsquaredsolutions.io' target='_blank'>B Squared Solutions</a>
                 </div>
             </div>
         </footer>
