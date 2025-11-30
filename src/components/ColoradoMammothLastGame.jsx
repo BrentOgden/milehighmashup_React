@@ -4,7 +4,7 @@ import espn  from '../api/espnApi';
 import axios from 'axios';
 
 const TEAM_ID    = 125422; // Colorado Mammoth’s ESPN team ID
-const SEASON     = 2025;
+const SEASON     = 2026;
 const SEASONTYPE = 2;      // regular season
 
 const RECORD_URL = `https://sports.core.api.espn.com/v2/sports/lacrosse/leagues/nll
