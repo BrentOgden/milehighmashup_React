@@ -1,79 +1,108 @@
 // src/components/DenverNuggetsNews.jsx
-import React, { useState, useEffect } from 'react';
-import espn from '../api/espnApi';
+import React, { useState, useEffect } from 'react'
+import espn from '../api/espnApi'
 
-const TEAM_ID = 7; // Nuggets
+// NOTE: TEAM_ID = 7 is almost certainly NOT the Nuggets on ESPN (7 is commonly Broncos/NFL Denver).
+// Leaving as-is since you didn’t ask to change it.
+const TEAM_ID = 7 // Nuggets
 
 export default function DenverNuggetsNews() {
-  const [articles,   setArticles]   = useState([]);
-  const [loading,    setLoading]    = useState(true);
-  const [error,      setError]      = useState(null);
-  const [isFallback, setFallback]   = useState(false);
+  const [articles, setArticles] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [isFallback, setFallback] = useState(false)
 
   function fmtDate(date) {
     const [yyyy, mm, dd] = new Intl.DateTimeFormat('en-CA', {
       timeZone: 'America/Denver',
-      year:     'numeric',
-      month:    '2-digit',
-      day:      '2-digit',
-    }).format(date).split('-');
-    return `${mm}-${dd}`;
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    })
+      .format(date)
+      .split('-')
+    return `${mm}-${dd}`
+  }
+
+  function safeHref(article) {
+    const href =
+      article?.links?.web?.href ||
+      article?.links?.api?.news?.href ||
+      article?.link ||
+      article?.url ||
+      null
+
+    if (!href || typeof href !== 'string') return null
+
+    if (/^https?:\/\//i.test(href) || /^\/\//.test(href)) return href
+    if (href.startsWith('/')) return `https://www.espn.com${href}`
+
+    return null
   }
 
   useEffect(() => {
     async function loadNews() {
-      setLoading(true);
-      setError(null);
+      setLoading(true)
+      setError(null)
+
       try {
         const res = await espn.get('/sports/basketball/nba/news', {
-          params: { lang:'en', region:'us', limit: 8 }
-        });
-        const all = res.data.articles || [];
+          params: { lang: 'en', region: 'us', limit: 8 },
+        })
 
-        const filtered = all.filter(article =>
-          article.categories?.some(cat =>
-            cat.type === 'team' &&
-            (cat.teamId === TEAM_ID || cat.team?.id === TEAM_ID)
+        const all = Array.isArray(res?.data?.articles) ? res.data.articles : []
+
+        // Keep only articles that have a usable link (prevents href crashes)
+        const allWithLinks = all.filter((a) => !!safeHref(a))
+
+        const filtered = allWithLinks.filter((article) =>
+          article.categories?.some(
+            (cat) =>
+              cat.type === 'team' &&
+              (cat.teamId === TEAM_ID || cat.team?.id === TEAM_ID)
           )
-        );
+        )
 
         if (filtered.length) {
-          setArticles(filtered);
-          setFallback(false);
+          setArticles(filtered)
+          setFallback(false)
         } else {
-          setArticles(all);
-          setFallback(true);
+          setArticles(allWithLinks)
+          setFallback(true)
         }
       } catch (e) {
-        console.error(e);
-        setError('Failed to load Nuggets news.');
+        console.error(e)
+        setError('Failed to load Nuggets news.')
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
     }
-    loadNews();
-  }, []);
+
+    loadNews()
+  }, [])
 
   if (loading) {
     return (
       <div className="max-w-sm mx-auto bg-white shadow rounded-lg p-6 text-center">
         <p className="text-gray-500">Loading Nuggets news…</p>
       </div>
-    );
+    )
   }
+
   if (error) {
     return (
       <div className="max-w-sm mx-auto bg-white shadow rounded-lg p-6 text-center">
         <p className="text-red-500">{error}</p>
       </div>
-    );
+    )
   }
+
   if (!articles.length) {
     return (
       <div className="max-w-sm mx-auto bg-white shadow rounded-lg p-6 text-center">
         <p className="text-gray-500">No news available.</p>
       </div>
-    );
+    )
   }
 
   return (
@@ -81,14 +110,19 @@ export default function DenverNuggetsNews() {
       <h2 className="text-4xl font-bold mb-6 text-white text-shadow-amber-700/90 text-shadow-lg">
         {isFallback ? 'NBA News' : 'Nuggets News'}
       </h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 h-full gap-6 md:auto-rows-fr">
-        {articles.map(article => {
-          const imgUrl  = article.images?.[0]?.url || '';
-          const pubDate = fmtDate(new Date(article.published));
-          const link    = article.links.web.href;
+        {articles.map((article) => {
+          const imgUrl = article.images?.[0]?.url || ''
+          const pubDate = fmtDate(new Date(article.published))
+          const link = safeHref(article)
+
+          // Extra safety (shouldn't happen due to filtering)
+          if (!link) return null
+
           return (
             <a
-              key={article.id}
+              key={article.id || link}
               href={link}
               target="_blank"
               rel="noopener noreferrer"
@@ -100,8 +134,13 @@ export default function DenverNuggetsNews() {
                     src={imgUrl}
                     alt={article.headline}
                     className="w-full h-48 object-cover text-md flex-shrink-0"
+                    onError={(e) => {
+                      // If an image 406/403s, just hide it; don't break layout
+                      e.currentTarget.style.display = 'none'
+                    }}
                   />
                 )}
+
                 <div className="p-4 flex flex-col flex-grow">
                   <p
                     className="text-xl font-semibold text-gray-800 text-right mb-2"
@@ -109,18 +148,18 @@ export default function DenverNuggetsNews() {
                   >
                     {pubDate}
                   </p>
+
                   <h3 className="text-lg font-bold text-gray-800 mb-2">
                     {article.headline}
                   </h3>
-                  <p className="text-gray-600 flex-grow">
-                    {article.description}
-                  </p>
+
+                  <p className="text-gray-600 flex-grow">{article.description}</p>
                 </div>
               </div>
             </a>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
