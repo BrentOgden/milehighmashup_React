@@ -50,8 +50,8 @@ export default function Facts() {
             bg: broncosBg,
             logo: broncosLogo,
             stats: [
-                '15 Division Championships',
-                '22 Playoff Appearances',
+                '16 Division Championships',
+                '24 Playoff Appearances',
                 '8 Conference Titles',
                 '3 Super Bowl Championships',
             ],
@@ -68,7 +68,7 @@ export default function Facts() {
             stats: [
                 '12 Division Championships',
                 "3 President's Trophies",
-                '28 Playoff Appearances',
+                '29 Playoff Appearances',
                 '3 Conference Titles',
                 '3 Stanley Cup Championships',
             ],
@@ -85,7 +85,7 @@ export default function Facts() {
             stats: [
                 '3 MVPs (2021, 2022, 2024)',
                 '12 Division Titles',
-                '31 Playoff Appearances',
+                '32 Playoff Appearances',
                 '1 Conference Title',
                 '1 NBA Championship',
             ],
