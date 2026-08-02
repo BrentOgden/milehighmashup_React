@@ -43,14 +43,15 @@ export default function LeagueVideos() {
     <>
       {/* Page Title */}
       <div className="py-12">
-        <h2 className="text-4xl font-extrabold text-white text-center text-shadow-slate-500/70 text-shadow-lg">
+        <h1 className="text-4xl font-extrabold text-white text-center text-shadow-slate-500/70 text-shadow-lg">
           Latest League Videos
-        </h2>
+        </h1>
       </div>
 
       {/* Sections */}
       {sections.map(({ title, Banner, bannerClass, Component }) => (
         <section key={title} className="mb-16">
+          <h2 className="sr-only">{title} videos</h2>
 
           {/* full-width banner image */}
           <div className="relative left-1/2 -translate-x-1/2 w-screen">

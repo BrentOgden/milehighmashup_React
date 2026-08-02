@@ -7,12 +7,13 @@
     "dev": "concurrently --kill-others \"npm:serve\" \"npm:client\"",
     "serve": "nodemon server/index.js",
     "client": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-static-routes.js",
     "scrape:google-images": "node scrape-google-images.js",
     "scrape:timeline": "node scrape-twitter-timeline-v1.js",
     "scrape:twitter-nitter": "node scrape-twitter-images-nitter.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:seo": "node scripts/validate-seo.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",

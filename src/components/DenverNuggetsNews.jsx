@@ -6,7 +6,7 @@ import espn from '../api/espnApi'
 // Leaving as-is since you didn’t ask to change it.
 const TEAM_ID = 7 // Nuggets
 
-export default function DenverNuggetsNews() {
+export default function DenverNuggetsNews({ headingLevel = 'h2', articleHeadingLevel = 'h3' }) {
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -105,11 +105,14 @@ export default function DenverNuggetsNews() {
     )
   }
 
+  const Heading = headingLevel
+  const ArticleHeading = articleHeadingLevel
+
   return (
     <div>
-      <h2 className="text-4xl font-bold mb-6 text-white text-shadow-amber-700/90 text-shadow-lg">
+      <Heading className="text-4xl font-bold mb-6 text-white text-shadow-amber-700/90 text-shadow-lg">
         {isFallback ? 'NBA News' : 'Nuggets News'}
-      </h2>
+      </Heading>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 h-full gap-6 md:auto-rows-fr">
         {articles.map((article) => {
@@ -149,9 +152,9 @@ export default function DenverNuggetsNews() {
                     {pubDate}
                   </p>
 
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  <ArticleHeading className="text-lg font-bold text-gray-800 mb-2">
                     {article.headline}
-                  </h3>
+                  </ArticleHeading>
 
                   <p className="text-gray-600 flex-grow">{article.description}</p>
                 </div>

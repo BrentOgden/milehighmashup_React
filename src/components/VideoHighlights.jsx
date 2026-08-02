@@ -133,10 +133,11 @@ export default function VideoHighlights() {
   return (
     <>
     <div className='font-bold pt-20 md:text-lg text-center'>
-        <h2 className='text-4xl text-shadow-lg text-shadow-amber-500/50'>Memorable Moments in Colorado Sports</h2>
+        <h1 className='text-4xl text-shadow-lg text-shadow-amber-500/50'>Memorable Moments in Colorado Sports</h1>
     </div>
       {/* Broncos Section */}
       <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#FB4F14]/50 text-white mt-20">
+        <h2 className="sr-only">Denver Broncos memorable moments</h2>
         <img
           src={broncosBg}
           alt="Denver Broncos banner"
@@ -153,6 +154,7 @@ export default function VideoHighlights() {
 
       {/* Avalanche Section */}
       <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#236192]/50 text-white mt-20">
+        <h2 className="sr-only">Colorado Avalanche memorable moments</h2>
         <img
           src={avsBg}
           alt="Colorado Avalanche banner"
@@ -169,6 +171,7 @@ export default function VideoHighlights() {
 
       {/* Nuggets Section */}
       <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#FEC524]/50 text-white mt-20">
+        <h2 className="sr-only">Denver Nuggets memorable moments</h2>
         <img
           src={nuggetsBg}
           alt="Denver Nuggets banner"
@@ -184,6 +187,7 @@ export default function VideoHighlights() {
       </section>
       {/* Nuggets Section */}
       <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#B0B6BB]/50 text-white mt-20">
+        <h2 className="sr-only">Colorado Mammoth memorable moments</h2>
         <img
           src={mammothBg}
           alt="Colorado Mammoth banner"

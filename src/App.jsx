@@ -38,9 +38,9 @@ export default function App() {
           <div className="relative z-10 flex flex-col items-center text-center max-w-4xl px-12 text-white">
             <h1 className="text-3xl md:text-5xl font-bold mb-2">
               Welcome to Mile High Mashup
-              <div className="text-3xl mt-2">
+              <span className="block text-3xl mt-2">
                 Where <span className="text-orange-400">Passion</span> Meets <span className="text-blue-600">Pride!</span>
-              </div>
+              </span>
             </h1>
             <p className="max-w-3xl mb-6 mt-6 text-lg leading-relaxed">
               Fans in Colorado don’t just follow sports — they LIVE them! Whether you're cheering for the Broncos, Nuggets, Avalanche or Mammoth, we've got you covered with non-stop news, juicy rumors, and the latest buzz from the Mile High City. Get your daily dose of Denver sports excitement right here, all day, every day!
@@ -68,7 +68,7 @@ export default function App() {
       <Quotes />
       <PhotoGrid />
 
-      <div
+      <section
         id="standings"
         className="
         scroll-mt-30
@@ -78,47 +78,49 @@ export default function App() {
         px-4 my-12
   "
       >
+        <h2 className="sr-only">Latest Denver sports scores and records</h2>
         <DenverNuggetsLastGame />
 
         {/* these use their own default date-range logic */}
         <ColoradoAvalancheLastGame />
         <DenverBroncosLastGame />
         <ColoradoMammothLastGame />
-      </div>
+      </section>
 
 
       {/* ─── NBA Scoreboard ──────────────────────────────────────── */}
 
 
       {/* ─── Did You Know? Facts ─────────────────────────────────── */}
-      <div id="facts" className="mt-200 md:mt-0 md:max-w-8xl mx-auto px-4 py-12 mb-8">
+      <section id="facts" className="mt-200 md:mt-0 md:max-w-8xl mx-auto px-4 py-12 mb-8">
         <h2 className="text-4xl font-bold">Did You Know?</h2>
         <Facts />
-      </div>
-      <div id="news" className="scroll-mt-20">
+      </section>
+      <section id="news" className="scroll-mt-20" aria-labelledby="latest-news-heading">
+        <h2 id="latest-news-heading" className="sr-only">Latest Denver sports news</h2>
         {/* Centered container + vertical gaps */}
         <div className="max-w-8xl mx-auto px-4 mb-30 sm:px-6 lg:px-8 
                         space-y-8 md:space-y-6 lg:space-y-8">
 
           {/* Avalanche News */}
           <section className="relative rounded-lg overflow-hidden shadow py-8 md:py-8">
-            <AvsNews />
+            <AvsNews headingLevel="h3" articleHeadingLevel="h4" />
           </section>
 
           {/* Broncos News */}
           <section className="relative rounded-lg overflow-hidden shadow py-8 md:py-8">
-            <BroncosNews />
+            <BroncosNews headingLevel="h3" articleHeadingLevel="h4" />
           </section>
 
           {/* Nuggets News */}
           <section className="relative rounded-lg overflow-hidden shadow py-8 md:py-8">
-            <NuggetsNews />
+            <NuggetsNews headingLevel="h3" articleHeadingLevel="h4" />
           </section>
           <section className="relative rounded-lg overflow-hidden shadow py-8 md:py-8">
-            <MammothNews />
+            <MammothNews headingLevel="h3" articleHeadingLevel="h4" />
           </section>
         </div>
-      </div>
+      </section>
 
       {/* ─── Highlight Videos ────────────────────────────────────── */}
       <section

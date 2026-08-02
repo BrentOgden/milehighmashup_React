@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import logo from './assets/logo-white.png'
 import footerimg from './assets/footerimg.png'
@@ -24,21 +25,21 @@ export default function Footer() {
                 {/* Explore links */}
                 <div className="flex justify-between">
                     <div>
-                        <h4 className="text-white font-semibold mb-2">Explore</h4>
+                        <h2 className="text-white font-semibold mb-2">Explore</h2>
                         <ul className="space-y-1 text-sm">
-                            <li><a href="/facts" className="hover:text-white">Did You Know?</a></li>
-                            <li><a href="/news" className="hover:text-white">News</a></li>
-                            <li><a href="/leaguevideos" className="hover:text-white">Videos</a></li>
-                            <li><a href="/videohighlights" className="hover:text-white">Classic Moments</a></li>
+                            <li><Link to="/facts/" className="hover:text-white">Did You Know?</Link></li>
+                            <li><Link to="/news/" className="hover:text-white">News</Link></li>
+                            <li><Link to="/leaguevideos/" className="hover:text-white">Videos</Link></li>
+                            <li><Link to="/videohighlights/" className="hover:text-white">Classic Moments</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-white font-semibold mb-2">Follow Me</h4>
+                        <h2 className="text-white font-semibold mb-2">Follow Me</h2>
                         <div className="flex space-x-4">
-                            <a href="https://twitter.com/MileHiRocks5280" aria-label="Twitter" className="hover:text-white" target='_blank'><FaTwitter size={20} /></a>
-                            <a href="https://youtube.com/@MileHiMayhem303" aria-label="YouTube" className="hover:text-white" target='_blank'><FaYoutube size={20} /></a>
-                            <a href="https://instagram.com/MileHiRocks5280" aria-label="Instagram" className="hover:text-white" target='_blank'><FaInstagram size={20} /></a>
+                            <a href="https://twitter.com/MileHiRocks5280" aria-label="Twitter" className="hover:text-white" target="_blank" rel="noopener noreferrer"><FaTwitter size={20} /></a>
+                            <a href="https://youtube.com/@MileHiMayhem303" aria-label="YouTube" className="hover:text-white" target="_blank" rel="noopener noreferrer"><FaYoutube size={20} /></a>
+                            <a href="https://instagram.com/MileHiRocks5280" aria-label="Instagram" className="hover:text-white" target="_blank" rel="noopener noreferrer"><FaInstagram size={20} /></a>
                         </div>
                     </div>
                 </div>
@@ -56,8 +57,8 @@ export default function Footer() {
                 <div className="max-w-screen-xl mx-auto px-6 py-4 text-center text-sm">
                     © {new Date().getFullYear()} Mile High Mashup. All rights reserved.
                 </div>
-                <div className='pb-10 text-sm'>
-                    Designed and built by <a className="hover:text-amber-400" href='https://bsquaredsolutions.io' target='_blank'>B Squared Solutions</a>
+                <div className="pb-10 text-sm">
+                    Designed and built by <a className="hover:text-amber-400" href="https://bsquaredsolutions.io" target="_blank" rel="noopener noreferrer">B Squared Solutions</a>
                 </div>
             </div>
         </footer>

@@ -16,7 +16,7 @@ import avsBg from '../assets/avsbackground.jpg';
 import mammothBg from '../assets/mammothbackground.png';
 import nuggetsBg from '../assets/denver-nuggets-logo-3840x2160-11719.jpg';
 
-export default function Facts() {
+export default function Facts({ headingLevel = 'h3' }) {
     const [activeSlide, setActiveSlide] = useState(0);
 
     const settings = {
@@ -116,6 +116,7 @@ export default function Facts() {
 
     // Use the active slide's titleColor for the shadow
     const shadowColor = slides[activeSlide].titleColor;
+    const Heading = headingLevel;
 
     return (
         <div className="md:max-w-4xl mw-2xl mx-auto py-12">
@@ -145,12 +146,12 @@ export default function Facts() {
                                             alt={`${title} Logo`}
                                             className="w-16 h-auto mx-auto mb-4"
                                         />
-                                        <h3
+                                        <Heading
                                             className="text-5xl font-bold mb-8"
                                             style={{ color: titleColor }}
                                         >
                                             {title}
-                                        </h3>
+                                        </Heading>
 
                                         {/* Stats with staggered animation */}
                                         <motion.div

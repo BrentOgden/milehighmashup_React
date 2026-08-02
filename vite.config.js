@@ -1,7 +1,20 @@
-// vite.config.js
 import { defineConfig, loadEnv } from 'vite'
-import react from '@vitejs/plugin-react'       // ← make sure you have this
+import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { getRouteMetadata } from './src/seo/siteMetadata.js'
+import { renderSeoBlock } from './scripts/seoHtml.js'
+
+function seoHtmlPlugin() {
+  return {
+    name: 'mile-high-mashup-seo-html',
+    transformIndexHtml(html) {
+      return html.replace(
+        '<!-- SEO_TAGS -->',
+        renderSeoBlock(getRouteMetadata('/'))
+      )
+    },
+  }
+}
 
 export default defineConfig(({ mode }) => {
   // load your .env vars
@@ -13,8 +26,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      react(),        // ← add React plugin if you haven’t already
+      react(),
       tailwindcss(),
+      seoHtmlPlugin(),
     ],
     server: {
       port: 5173,

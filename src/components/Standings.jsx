@@ -102,7 +102,7 @@ const Standings = () => {
 
   const renderTeamRecord = (team, records) => {
     if (records.length === 0) {
-      return <h3 className='results-block'>There are no games for the {team} today.</h3>;
+      return <p className='results-block'>There are no games for the {team} today.</p>;
     }
     return (
       <div>
@@ -118,7 +118,7 @@ const Standings = () => {
               {record.awayTeam}<p>{record.awayScore}</p>
             </div>
             <div className='date-block'>
-              <h3>{record.date}</h3>
+              <p>{record.date}</p>
             </div>
           </div>
         ))}

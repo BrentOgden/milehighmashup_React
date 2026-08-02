@@ -5,7 +5,7 @@ import espn from '../api/espnApi'
 // ESPN’s Mammoth team ID
 const TEAM_ID = 125422
 
-export default function ColoradoMammothNews() {
+export default function ColoradoMammothNews({ headingLevel = 'h2', articleHeadingLevel = 'h3' }) {
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -113,11 +113,14 @@ export default function ColoradoMammothNews() {
     )
   }
 
+  const Heading = headingLevel
+  const ArticleHeading = articleHeadingLevel
+
   return (
     <div>
-      <h2 className="text-4xl font-bold mb-6 text-white text-shadow-gray-500/90 text-shadow-lg">
+      <Heading className="text-4xl font-bold mb-6 text-white text-shadow-gray-500/90 text-shadow-lg">
         {isFallback ? 'NLL News' : 'Mammoth News'}
-      </h2>
+      </Heading>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 h-full md:auto-rows-fr">
         {articles.map((article) => {
@@ -157,9 +160,9 @@ export default function ColoradoMammothNews() {
                     {pubDate}
                   </p>
 
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  <ArticleHeading className="text-lg font-bold text-gray-800 mb-2">
                     {article.headline}
-                  </h3>
+                  </ArticleHeading>
 
                   <p className="text-gray-600 flex-grow">{article.description}</p>
                 </div>
